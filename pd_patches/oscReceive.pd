@@ -1,0 +1,18 @@
+#N canvas 0 22 235 401 10;
+#X obj 132 227 osc~ 440;
+#X obj 82 338 dac~;
+#X floatatom 132 171 5 0 0 0 - - -;
+#X obj 133 200 sig~;
+#X obj 73 33 dumpOSC 9200;
+#X obj 73 68 OSCroute /position;
+#X obj 74 100 unpack 0 0;
+#X obj 73 298 linear_pan~;
+#X connect 0 0 7 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 1;
+#X connect 6 1 2 0;
+#X connect 7 0 1 0;
+#X connect 7 1 1 1;
