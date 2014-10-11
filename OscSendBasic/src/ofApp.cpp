@@ -11,12 +11,7 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    ofxOscMessage m; //Oscメッセージを作る
-    m.setAddress("/position"); //名前
-    m.addFloatArg(mouseX); //引数を順番に追加
-    m.addFloatArg(mouseY);
     
-    sender.sendMessage(m);
 }
 
 //--------------------------------------------------------------
@@ -37,7 +32,12 @@ void ofApp::keyReleased(int key){
 
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y ){
-
+    ofxOscMessage m; //Oscメッセージを作る
+    m.setAddress("/position"); //名前
+    m.addFloatArg(mouseX); //引数を順番に追加
+    m.addFloatArg(mouseY);
+    
+    sender.sendMessage(m);
 }
 
 //--------------------------------------------------------------
